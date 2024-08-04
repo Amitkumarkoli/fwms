@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FWMS',
+      title: 'FWMS',debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       initialRoute: '/',
       routes: appRoutes,
