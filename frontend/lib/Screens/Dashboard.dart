@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fwms/Screens/Request_screen.dart';
+import 'package:fwms/Screens/analytics.dart';
+import 'package:fwms/Screens/contact_us.dart';
+import 'package:fwms/Screens/features.dart';
+import 'package:fwms/Screens/product_screen.dart';
 import 'package:fwms/Screens/profile.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -70,16 +75,61 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {
-                              if (cardTitles[index] == 'My Account') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ProfileScreen(),
-                                  ),
-                                );
+                              switch (cardTitles[index]) {
+                                case 'My Account':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ProfileScreen(),
+                                    ),
+                                  );
+                                  break;
+                                case 'Request':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => RequestScreen(),
+                                    ),
+                                  );
+                                  break;
+                                case 'Analytics':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AnalyticsScreen(),
+                                    ),
+                                  );
+                                  break;
+                                case 'Product':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ProductScreen(),
+                                    ),
+                                  );
+                                  break;
+                                case 'Features':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FeaturesScreen(),
+                                    ),
+                                  );
+                                  break;
+                                case 'Contact':
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ContactUsPage(),
+                                    ),
+                                  );
+                                  break;
+                                default:
+                                  // Handle unknown card
+                                  break;
                               }
-                              // Handle other card taps if necessary
                             },
+                            // Handle other card taps if necessary
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16.0),
